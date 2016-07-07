@@ -1,0 +1,115 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Comindware.Platform.WebApi.Contracts</RootNamespace>
+    <AssemblyName>Comindware.Platform.WebApi.Contracts</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <SignAssembly Condition="$(Signed) == True">True</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Comindware.Platform.WebApi.Contracts.xml</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>Comindware.Platform.WebApi.Contracts.XML</DocumentationFile>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Exceptions\AccessDeniedWebApiException.cs" />
+    <Compile Include="Exceptions\ArgumentMustBeSpecifiedException.cs" />
+    <Compile Include="Exceptions\ErrorStatusCodeClientException.cs" />
+    <Compile Include="Exceptions\InvalidItemContainerException.cs" />
+    <Compile Include="Exceptions\NotAuthorizedWebApiException.cs" />
+    <Compile Include="Exceptions\ObjectNotFoundWebApiException.cs" />
+    <Compile Include="Exceptions\ObjectWithThisIdDoesNotExist.cs" />
+    <Compile Include="Exceptions\BulkOperationClientException.cs" />
+    <Compile Include="Exceptions\WebApiClientException.cs" />
+    <Compile Include="Exceptions\WebApiException.cs" />
+    <Compile Include="Exceptions\WrongContainerTypeException.cs" />
+    <Compile Include="Exceptions\WrongOperationException.cs" />
+    <Compile Include="Objects\AccountInformation.cs" />
+    <Compile Include="Objects\AuthenticationResult.cs" />
+    <Compile Include="Objects\BulkOperationResponse.cs" />
+    <Compile Include="Objects\DataSet.cs" />
+    <Compile Include="Objects\DatasetQuery.cs" />
+    <Compile Include="Objects\ExportConfig.cs" />
+    <Compile Include="Objects\FileContent.cs" />
+    <Compile Include="Objects\DatasetsQuery.cs" />
+    <Compile Include="Objects\DatasetData.cs" />
+    <Compile Include="Objects\FilterTree.cs" />
+    <Compile Include="Objects\HistoryModel.cs" />
+    <Compile Include="Objects\ItemsQuery.cs" />
+    <Compile Include="Objects\CredentialPair.cs" />
+    <Compile Include="Objects\Localized.cs" />
+    <Compile Include="Objects\WebApiResponse.cs" />
+    <Compile Include="Objects\AppModel.cs" />
+    <Compile Include="Objects\AttachmentModel.cs" />
+    <Compile Include="Objects\CommentModel.cs" />
+    <Compile Include="Objects\InstanceModel.cs" />
+    <Compile Include="Objects\ItemModel.cs" />
+    <Compile Include="Objects\DatasetModel.cs" />
+    <Compile Include="Objects\PropertyDataType.cs" />
+    <Compile Include="Objects\PropertyModel.cs" />
+    <Compile Include="Objects\PrototypeModel.cs" />
+    <Compile Include="Objects\TimespentModel.cs" />
+    <Compile Include="Objects\UserModel.cs" />
+    <Compile Include="Objects\WebApiError.cs" />
+    <Compile Include="Objects\WorkflowEventModel.cs" />
+    <Compile Include="Objects\WorkflowModel.cs" />
+    <Compile Include="Objects\WorkflowParallelGatewayModel.cs" />
+    <Compile Include="Objects\WorkflowState.cs" />
+    <Compile Include="Objects\WorkflowTransitionModel.cs" />
+    <Compile Include="Objects\WorkspaceModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\IAccountService.cs" />
+    <Compile Include="Services\IAppService.cs" />
+    <Compile Include="Services\IAttachmentService.cs" />
+    <Compile Include="Services\IAuthenticationService.cs" />
+    <Compile Include="Services\ICommentsService.cs" />
+    <Compile Include="Services\IFavoriteService.cs" />
+    <Compile Include="Services\IItemService.cs" />
+    <Compile Include="Services\IItemsService.cs" />
+    <Compile Include="Services\IDatasetService.cs" />
+    <Compile Include="Services\IDataService.cs" />
+    <Compile Include="Services\IPrototypeService.cs" />
+    <Compile Include="Services\ITimespentservice.cs" />
+    <Compile Include="Services\IWorkflowService.cs" />
+    <Compile Include="Services\IWorkspaceService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

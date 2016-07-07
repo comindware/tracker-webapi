@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+  <metadata>
+    <id>Comindware.Tracker.WebApi.Client</id>
+    <version>1.0.0</version>
+    <authors>Comindware</authors>
+    <owners>Comindware</owners>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Client library for Tracker Web API</description>
+    <dependencies>
+      <dependency id="RestSharpSigned" />
+      <dependency id="Newtonsoft.Json" />
+    </dependencies>
+  </metadata>
+  <files>
+    <file src="Tracker\Tracker\Platform.WebApi.Client\bin\release\Comindware.Platform.WebApi.Client.dll" target="lib"/>
+    <file src="Tracker\Tracker\Platform.WebApi.Client\bin\release\Comindware.Platform.WebApi.Contracts.dll" target="lib"/>
+    <file src="Tracker\Tracker\Platform.WebApi.Client\bin\release\Comindware.Platform.WebApi.*.xml" target="lib"/>
+    <file src="Tracker\Tracker\Platform.WebApi.Client\bin\release\Comindware.Platform.WebApi.*.pdb" target="lib"/>
+  </files>
+</package>

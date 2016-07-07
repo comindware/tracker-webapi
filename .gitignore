@@ -1,0 +1,13 @@
+*.suo
+*.user
+*.wxs
+*.xml
+*.wxl
+.idea/
+.backup/
+bin/
+obj/
+packages/
+TestResults/
+n3CompileDummy.txt
+dummy.txt
