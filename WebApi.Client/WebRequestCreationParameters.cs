@@ -12,5 +12,6 @@ namespace Comindware.Platform.WebApi.Client
         public string ContentType { get; set; }
         public string Query { get; set; }
         public IDictionary<string, string> QueryParameters { get; set; }
+        public IDictionary<string, List<string>> ListQueryParameters { get; set; }
     }
 }

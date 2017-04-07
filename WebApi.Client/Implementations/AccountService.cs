@@ -4,7 +4,7 @@ using RestSharp;
 
 namespace Comindware.Platform.WebApi.Client
 {
-    public class AccountService:BaseService,IAccountService
+    public class AccountService : BaseService, IAccountService
     {
         public AccountService(InterfaceInstanceParameters creationParameters) : base(creationParameters)
         {
@@ -20,7 +20,7 @@ namespace Comindware.Platform.WebApi.Client
         public List<FileContent> GetUserAvatars(string[] ids)
         {
             var query = "Api/Account/Avatar";
-            var result = ProcessRequest(Method.POST, query,content:ids);
+            var result = ProcessRequest(Method.POST, query, content:ids);
             return GetResponseResult<List<FileContent>>(result);
         }
 

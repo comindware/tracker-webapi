@@ -36,9 +36,12 @@
     <DocumentationFile>Comindware.Platform.WebApi.Contracts.XML</DocumentationFile>
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\packages\Comindware.Tools.Keys.1.5.0\comindware.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Newtonsoft.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
-      <HintPath>..\packages\Newtonsoft.Json.8.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.9.0.1\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
@@ -61,6 +64,7 @@
     <Compile Include="Exceptions\WrongOperationException.cs" />
     <Compile Include="Objects\AccountInformation.cs" />
     <Compile Include="Objects\AuthenticationResult.cs" />
+    <Compile Include="Objects\BackupSession.cs" />
     <Compile Include="Objects\BulkOperationResponse.cs" />
     <Compile Include="Objects\DataSet.cs" />
     <Compile Include="Objects\DatasetQuery.cs" />
@@ -97,6 +101,7 @@
     <Compile Include="Services\IAppService.cs" />
     <Compile Include="Services\IAttachmentService.cs" />
     <Compile Include="Services\IAuthenticationService.cs" />
+    <Compile Include="Services\IBackupService.cs" />
     <Compile Include="Services\ICommentsService.cs" />
     <Compile Include="Services\IFavoriteService.cs" />
     <Compile Include="Services\IItemService.cs" />
@@ -112,4 +117,19 @@
     <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <Import Project="..\packages\Comindware.Tools.Keys.1.5.0\tools\Comindware.Tools.Keys.targets" Condition="Exists('..\packages\Comindware.Tools.Keys.1.5.0\tools\Comindware.Tools.Keys.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
 </Project>

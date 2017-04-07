@@ -35,6 +35,7 @@ namespace Comindware.Platform.WebApi.Client
             Kernel.Register<InterfaceInstanceParameters, IWorkspaceService>((factory, value) => new WorkspaceService(value));
             Kernel.Register<InterfaceInstanceParameters, IAuthenticationService>((factory, value) => new AuthenticationService(value));
             Kernel.Register<InterfaceInstanceParameters, IAccountService>((factory, value) => new AccountService(value));
+            Kernel.Register<InterfaceInstanceParameters, IBackupService>((factory, value) => new BackupService(value));
             Kernel.Register<InterfaceInstanceParameters, IDataService>((factory, value) => new DataService(value));
             Kernel.Register<InterfaceInstanceParameters, IFavoriteService>((factory, value) => new FavoriteService(value));
         }

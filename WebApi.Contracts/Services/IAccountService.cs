@@ -11,7 +11,5 @@ namespace Comindware.Platform.WebApi.Contracts
         AccountInformation GetProfile(string id);
 
         DataSet ListAccounts();
-
-
     }
 }

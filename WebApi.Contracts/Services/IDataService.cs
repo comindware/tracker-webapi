@@ -3,29 +3,29 @@
     public interface IDataService
     {
         /// <summary>
-        /// Gets dataset config.
+        /// Gets dataset config
         /// </summary>
-        /// <param name="id">Dataset identifier.</param>
+        /// <param name="id">Dataset identifier</param>
         /// <returns>Dataset config.</returns>
         DatasetQuery GetUserConfig(string id);
 
         /// <summary>
-        /// Sets dataset config.
+        /// Sets dataset config
         /// </summary>
-        /// <param name="query">Dataset config.</param>
+        /// <param name="query">Dataset config</param>
         void SetUserConfig(DatasetQuery query);
 
         /// <summary>
-        /// Gets dataset data by config.
+        /// Gets dataset data by config
         /// </summary>
-        /// <param name="query">Dataset config.</param>
+        /// <param name="query">Dataset config</param>
         /// <returns>Dataset data.</returns>
         DataSet GetData(DatasetQuery query);
 
         /// <summary>
         /// Gets overall items count in dataset
         /// </summary>
-        /// <param name="id">Dataset id.</param>
+        /// <param name="id">Dataset id</param>
         /// <returns>Items count.</returns>
         int GetItemsCount(string id);
     }

@@ -22,5 +22,6 @@ namespace Comindware.Platform.WebApi.Client
             var result = this.ProcessRequest(Method.GET, queryString);
             return this.GetResponseResult<string>(result);
         }
+
     }
 }

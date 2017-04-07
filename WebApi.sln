@@ -3,9 +3,16 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Client", "WebApi.Client\WebApi.Client.csproj", "{CDA46690-09D0-49F7-B76D-918F235177ED}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Contracts", "WebApi.Contracts\WebApi.Contracts.csproj", "{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApi.Client", "WebApi.Client\WebApi.Client.csproj", "{CDA46690-09D0-49F7-B76D-918F235177ED}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{E7B9647D-57F1-46C3-B407-4E9687AFBEF6}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -13,14 +20,14 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CDA46690-09D0-49F7-B76D-918F235177ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CDA46690-09D0-49F7-B76D-918F235177ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CDA46690-09D0-49F7-B76D-918F235177ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CDA46690-09D0-49F7-B76D-918F235177ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C080ECD1-6FB5-4E77-B5FB-CED78C08C21C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

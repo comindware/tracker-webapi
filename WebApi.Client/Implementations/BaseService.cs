@@ -15,9 +15,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http.Headers;
 using System.Security.Cryptography;
-using System.Security.Principal;
 using System.Text;
-using System.Threading;
 using Comindware.Platform.WebApi.Contracts;
 using RestSharp;
 using RestSharp.Authenticators;
@@ -44,6 +42,20 @@ namespace Comindware.Platform.WebApi.Client
                 Token = this.CreationParameters.Token,
                 Uri = this.CreationParameters.Uri,
                 QueryParameters = queryParameters
+            };
+        }
+
+        protected WebRequestCreationParameters CreateParameters(Method method, string query, IDictionary<string, List<string>> queryParameters)
+        {
+            return new WebRequestCreationParameters
+            {
+                ContentType = "application/json",
+                Method = method,
+                Query = query,
+                Secret = this.CreationParameters.Secret,
+                Token = this.CreationParameters.Token,
+                Uri = this.CreationParameters.Uri,
+                ListQueryParameters = queryParameters
             };
         }
 
@@ -141,6 +153,16 @@ namespace Comindware.Platform.WebApi.Client
             return result;
         }
 
+        protected IRestResponse ProcessRequest(Method method, string address, Dictionary<string, List<string>> queryParameters, object content = null)
+        {
+            var processingParameters = this.CreateParameters(method, address, queryParameters);
+            var body = content == null
+                ? null
+                : ClientJsonSerializer.ToJson(content);
+            var result = ProcessRequest(processingParameters, body);
+            return result;
+        }
+
         protected IRestResponse ProcessFileBodyRequest(Method method, string address, Dictionary<string, string> queryParameters = null, FileContent file = null)
         {
             var processingParameters = this.CreateParameters(method, address, queryParameters);
@@ -186,6 +208,16 @@ namespace Comindware.Platform.WebApi.Client
                 foreach (var parameter in parameters.QueryParameters)
                 {
                     request.AddQueryParameter(parameter.Key, parameter.Value);
+                }
+            }
+            if (parameters.ListQueryParameters != null)
+            {
+                foreach (var parameter in parameters.ListQueryParameters)
+                {
+                    foreach (var val in parameter.Value)
+                    {
+                        request.AddQueryParameter(parameter.Key, val);
+                    }
                 }
             }
             return request;
